@@ -38,17 +38,18 @@ h2 {
   width: 1280px;
   padding: 50px;
   box-shadow: 0 0 20px 2px rgna(0, 0, 0, 0.1);
-    background-image: url(../../bg.png);
-    background-size: 100% 100%;
+  background-image: url(../../bg.png);
+  background-size: 100% 100%;
 }
 
-ul {
+.nav--ul {
   @include reset-pm();
   list-style: none;
   display: flex;
   gap: 20px;
+
   li {
-    a {
+    .nav--ul--link {
       @include btn(
         $background-color: $terciary-color,
         $color: $font-color,
@@ -58,12 +59,22 @@ ul {
         @include btn($secondary-color, $terciary-color, "false");
         box-shadow: $box-shadow;
       }
+
+      &.nav--ul--link__type1 {
+        @include btn($primary-color, $secondary-color, "false");
+        box-shadow: $box-shadow;
+
+        &:hover {
+          @include btn($terciary-color,$secondary-color, "false");
+          box-shadow: $box-shadow2;
+        }
+      }
     }
   }
 }
 
-header {
-  nav {
+.header {
+  .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
